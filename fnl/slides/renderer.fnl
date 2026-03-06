@@ -7,11 +7,10 @@
 (fn define-highlights []
   (when (not highlights-defined)
     (set highlights-defined true)
-    ;; TODO: use existing hl groups for these instead
-    (vim.api.nvim_set_hl 0 :SlidesH1 {:bold true :fg "#e0af68"})
-    (vim.api.nvim_set_hl 0 :SlidesH2 {:bold true :fg "#7aa2f7"})
+    (vim.api.nvim_set_hl 0 :SlidesH1 {:link :Title})
+    (vim.api.nvim_set_hl 0 :SlidesH2 {:link "@markup.heading"})
     (vim.api.nvim_set_hl 0 :SlidesBold {:bold true})
-    (vim.api.nvim_set_hl 0 :SlidesBullet {:fg "#e0af68"})
+    (vim.api.nvim_set_hl 0 :SlidesBullet {:link "@markup.list"})
     (vim.api.nvim_set_hl 0 :SlidesBody {})))
 
 (fn render-title-slide [slide win-width win-height display-lines line-meta]

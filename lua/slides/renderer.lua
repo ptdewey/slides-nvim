@@ -4,10 +4,10 @@ local highlights_defined = false
 local function define_highlights()
   if not highlights_defined then
     highlights_defined = true
-    vim.api.nvim_set_hl(0, "SlidesH1", {bold = true, fg = "#e0af68"})
-    vim.api.nvim_set_hl(0, "SlidesH2", {bold = true, fg = "#7aa2f7"})
+    vim.api.nvim_set_hl(0, "SlidesH1", {link = "Title"})
+    vim.api.nvim_set_hl(0, "SlidesH2", {link = "@markup.heading"})
     vim.api.nvim_set_hl(0, "SlidesBold", {bold = true})
-    vim.api.nvim_set_hl(0, "SlidesBullet", {fg = "#e0af68"})
+    vim.api.nvim_set_hl(0, "SlidesBullet", {link = "@markup.list"})
     return vim.api.nvim_set_hl(0, "SlidesBody", {})
   else
     return nil
